@@ -1,0 +1,18 @@
+<div class="col-md-4 mb-4">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= @task.title %></h5>
+      <p class="card-text"><%= @task.description %></p>
+      <p class="card-text"><small class="text-muted">Status: <%= @task.status %></small></p>
+      <p class="card-text"><small class="text-muted">Deadline: <%= @task.deadline %></small></p>
+    </div>
+    <div class="card-footer text-center">
+      <%= link_to edit_task_path(@task), class: "btn btn-sm btn-outline-primary" do %>
+        <%= icon('fa fa-pen') %> Edit
+      <% end %>
+      <%= link_to task_delete_path(@task), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-outline-danger" do %>
+        <%= icon('fa fa-trash') %> Delete
+      <% end %>
+    </div>
+  </div>
+</div>
